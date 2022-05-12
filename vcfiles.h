@@ -5,7 +5,7 @@
 #include <dirent.h>
 #include <string.h>
 
-static const char * FILE_TYPE_ERROR = "FILE HAS UNSUPPORTED";
+static const char * FILE_TYPE_ERROR = "FILE IS UNSUPPORTED";
 
 
 int get_full_path_file_size(const char * file_path);
