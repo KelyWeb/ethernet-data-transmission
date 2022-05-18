@@ -90,3 +90,25 @@ int show_dir_info(const char * dir_name, struct stat * file_info, int tabble_sta
     }
     return full_bytes_size;
 }
+
+
+void formate_pathsize_output(const int path_size) {
+
+    printf("FULL FILE SIZE: %d BYTES\n", path_size);
+    printf("Do you really want to send this data? Y/N\n");
+    
+}
+
+
+int get_file_type(const char * file_path) {
+
+    if(file_path == NULL) return -1;
+
+    struct stat file_info;
+    stat(file_path, &file_info);
+
+    if( S_ISDIR(file_info.st_mode) ) return 1;
+    if( S_ISREG(file_info.st_mode) ) return 2;
+
+    return -1;
+}
